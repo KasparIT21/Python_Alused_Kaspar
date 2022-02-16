@@ -8,13 +8,14 @@ from collections import Counter
 count = 0
 count1 = 0
 erakonnad = []
+
 with open('s6pru_l6ustaraamatus.txt', 'r') as s6brad:
     for rida in s6brad:
         a = rida.split(" ")
         print(f'{a[0]:11}{a[1]:11}{a[2]:4}{a[3]:5}', end="")
         if a[2] not in erakonnad:
             erakonnad.append(a[2])
-            
+        print(f"{a[0]:11}{a[1]:11}", file=open("nimed.txt", "a"))
         
 print()
 print()
@@ -33,10 +34,8 @@ with open("s6pru_l6ustaraamatus.txt") as f1:
 
 print("Keskerakondi:", count1)
 
-if a[2] not in erakonnad:
-    erakonnad.append(a[2])
+
     
 erakond = set(erakonnad)
 kokku = len(erakond)
 print("Erakondi kokku:", kokku)
-
